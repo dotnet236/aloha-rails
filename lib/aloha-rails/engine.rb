@@ -2,7 +2,7 @@ require 'rails'
 
 module Aloha::Rails
 
-  class Engine < Rails::Engine
+  class Engine < ::Rails::Engine
 
   end
 

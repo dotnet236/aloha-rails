@@ -1,8 +1,11 @@
 require "aloha-rails/version"
-require "aloha-rails/engine"
+require "aloha-rails/railtie" if defined?(::Rails)
+require "aloha-rails/engine"  if defined?(::Rails)
 
 module Aloha
   module Rails
-    # Your code goes here...
+
+    autoload :Helpers, 'aloha-rails/helpers'
+
   end
 end
