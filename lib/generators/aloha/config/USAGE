@@ -1,8 +1,8 @@
 Description:
-    Installs the aloha-config.js file.
+    Installs the aloha-config.coffee file that contains global Aloha configurations.
 
 Example:
     rails generate aloha:config 
 
     This will create:
-        app/assets/javascripts/aloha-config.js
+        app/assets/javascripts/aloha-config.coffee
