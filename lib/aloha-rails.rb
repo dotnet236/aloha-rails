@@ -7,5 +7,8 @@ module Aloha
 
     autoload :Helpers, 'aloha-rails/helpers'
 
+    mattr_accessor :default_plugins
+
+    self.default_plugins = ['common/format', 'common/list', 'common/link']
   end
 end
