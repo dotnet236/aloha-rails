@@ -1,6 +1,8 @@
-Aloha = window.Aloha || ( window.Aloha = {} )
+window.Aloha = window.Aloha || {}
 
 Aloha.settings =
+  modules: ['aloha', 'aloha/jquery']
+  editables: '.editable-long-text, .editable-short-text'
   logLevels: 
     error: true
     warn: false
@@ -82,3 +84,5 @@ Aloha.settings =
 
       'numerated-headers':
         numeratedactive: false
+
+Aloha.onReady = -> # console.log "Aloha is ready!"
