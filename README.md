@@ -1,6 +1,6 @@
 # Aloha::Rails
 
-TODO: Write a gem description
+This gem provides the Aloha-Editor for use with Rails 3.
 
 ## Installation
 
@@ -8,17 +8,9 @@ Add this line to your application's Gemfile:
 
     gem 'aloha-rails'
 
-And then execute:
+Run the generator to install the aloha-config javascript file:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install aloha-rails
-
-## Usage
-
-TODO: Write usage instructions here
+    rails generate aloha:config
 
 ## Contributing
 

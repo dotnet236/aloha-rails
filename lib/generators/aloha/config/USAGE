@@ -1,0 +1,8 @@
+Description:
+    Installs the aloha-config.js file.
+
+Example:
+    rails generate aloha:config 
+
+    This will create:
+        app/assets/javascripts/aloha-config.js
