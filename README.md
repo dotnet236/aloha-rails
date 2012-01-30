@@ -8,9 +8,11 @@ Add this line to your application's Gemfile:
 
     gem 'aloha-rails'
 
-Run the generator to install the aloha-config javascript file:
+Run the generator to install the Aloha config (coffeescript):
 
-    rails generate aloha:config
+    rails generate aloha:config [--js]
+
+Pass --js if you want the javascript version.
 
 ## Contributing
 
