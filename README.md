@@ -10,7 +10,7 @@ Add this line to your application's Gemfile:
 
 Run the generator to install the Aloha config files:
 
-    rails generate aloha:config [--js]
+    rails generate aloha:install [--js]
 
 Pass --js if you want the javascript version.
 
