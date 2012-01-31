@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["ovelar@gmail.com", "gudleik@gmail.com"]
   gem.description   = %q{aloha-editor in Rails 3}
   gem.summary       = %q{Provides the aloha-editor for your rails3 app}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/Skalar/aloha-rails"
 
   gem.files         = `git ls-files`.split("\n")
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
