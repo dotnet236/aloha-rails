@@ -1,6 +1,6 @@
 # Aloha::Rails
 
-This gem provides the Aloha-Editor for use with Rails 3.
+Power your rails 3 app with the Aloha Editor.
 
 ## Installation
 
@@ -8,16 +8,27 @@ Add this line to your application's Gemfile:
 
     gem 'aloha-rails'
 
-Run the generator to install the Aloha config (coffeescript):
+Run the generator to install the Aloha config files:
 
     rails generate aloha:config [--js]
 
 Pass --js if you want the javascript version.
 
-## Contributing
+## Usage
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Edit these files to configure aloha:
+
+    * app/assets/javascripts/aloha-config.(coffee|js)
+    * config/initializers/aloha.rb
+
+
+To setup aloha, add this in the &lt;head&gt; section of your template:
+
+    = javascript_include_tag 'application'
+    = aloha!
+
+Finally, to make things editable, add a .editable-(long|short)-text to the HTML element:
+
+    div.editable-long-text
+      p Lorem Ipsum...
+
