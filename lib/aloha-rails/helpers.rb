@@ -22,6 +22,23 @@ module Aloha
 
         content_tag :script, nil, options
       end
+
+
+      def aloha_setup
+        js = <<-JS
+        Aloha.ready(function() { 
+          Aloha.require(Aloha.settings.modules, function(Aloha, $) {
+            Aloha.onReady();
+            $(Aloha.settings.editables).aloha();
+          });
+        });
+        JS
+        javascript_tag js
+      end
+
+      def aloha!(options = {})
+        aloha_script_tag(options) + aloha_setup
+      end
     end
 
   end

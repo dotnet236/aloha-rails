@@ -51,7 +51,19 @@ describe "Aloha::Rails::Helpers" do
 
   end
 
-  context "aloha_initializer" do
+  context "aloha_setup" do
 
+    it "returns a javascript tag" do
+      aloha_setup.should match(%r{<script type="text/javascript">})
+    end
+
+  end
+
+  context "aloha!" do
+    it "returns aloha_script_tag and aloha_setup" do
+      self.should_receive(:aloha_script_tag).with(:extra_plugins => ['foo']) { "<script>" } 
+      self.should_receive(:aloha_setup) { "<setup>" }
+      aloha!(extra_plugins: ['foo']).should eq("<script><setup>")
+    end
   end
 end
