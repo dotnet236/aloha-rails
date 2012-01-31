@@ -7,7 +7,7 @@ module Aloha
         options = {
           type: 'text/javascript',
           src: '/assets/aloha/lib/aloha.js',
-          plugins: %w(common/format common/table common/list common/link common/block common/undod common/contenthandler common/paste),
+          plugins: Aloha::Rails.default_plugins,
           extra_plugins: []
         }.update(options)
 

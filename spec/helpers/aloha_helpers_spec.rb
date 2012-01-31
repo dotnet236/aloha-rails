@@ -17,8 +17,9 @@ describe "Aloha::Rails::Helpers" do
     end
 
     context "without options" do
-      it "inserts the default set of options as data tags" do
-        aloha_script_tag.should match('data-aloha-plugins="common/format,common/table,common/list,common/link,common/block,common/undod,common/contenthandler,common/paste"')
+      it "inserts the default set of plugins as data tags" do
+        Aloha::Rails.stub(:default_plugins) { %w(common/foo common/bar) }
+        aloha_script_tag.should match(%{data-aloha-plugins="common/foo,common/bar"})
       end
     end
 
@@ -38,7 +39,8 @@ describe "Aloha::Rails::Helpers" do
 
     context "extra_plugins" do
       it "appends the plugins to the default plugin list" do
-        aloha_script_tag(:extra_plugins => [ 'custom/foo' ]).should match('data-aloha-plugins="common/format,common/table.*,custom/foo"')
+        Aloha::Rails.stub(:default_plugins) { %w(foo/bar) }
+        aloha_script_tag(:extra_plugins => [ 'custom/foo' ]).should match(%{data-aloha-plugins="foo/bar,custom/foo"})
       end
 
       it "removes default plugins if :plugins is set to nil" do
@@ -49,4 +51,7 @@ describe "Aloha::Rails::Helpers" do
 
   end
 
+  context "aloha_initializer" do
+
+  end
 end
