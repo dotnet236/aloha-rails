@@ -5,10 +5,10 @@ module Aloha
     module Helpers
       def aloha_script_tag(options={})
         options = {
-          type: 'text/javascript',
-          src: '/assets/aloha/lib/aloha.js',
-          plugins: Aloha::Rails.default_plugins,
-          extra_plugins: []
+          :type => 'text/javascript',
+          :src => '/assets/aloha/lib/aloha.js',
+          :plugins => Aloha::Rails.default_plugins,
+          :extra_plugins => []
         }.update(options)
 
         plugins = options.delete(:plugins) || []
