@@ -22,4 +22,13 @@ class Aloha::InstallGenerator < Rails::Generators::Base
       copy_file "application.js", appjs
     end
   end
+
+  def load_stylesheet
+    appcss = File.join "app", "assets", "stylesheets", "application.css"
+    if File.exist? appcss
+      insert_into_file appcss, " *= require aloha-config\n", :after => "require_self\n"
+    else
+      copy_file "application.css", appcss
+    end
+  end
 end
